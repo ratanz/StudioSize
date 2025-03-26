@@ -60,7 +60,7 @@ const services = [
       "https://player.vimeo.com/progressive_redirect/playback/939539416/rendition/720p/file.mp4?loc=external&log_user=0&signature=8c1b51fbc4032590fcdb7000c1f59e5203fd5d2f9c336e15ba9b87d345e29a5d",
   },
   {
-    name: "Brand Art©️",
+    name: "Brand Art",
     video:
       "https://player.vimeo.com/progressive_redirect/playback/939539365/rendition/720p/file.mp4?loc=external&log_user=0&signature=d5965ce7678518d264c634924c15654f982211973e44811f9941e8fd3029113e",
   },
