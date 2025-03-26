@@ -91,13 +91,33 @@ const Page5: React.FC = () => {
     []
   );
 
-  // useEffect(() => {
-  //   // Preload all videos
-  //   services.forEach((service) => {
-  //     const video = new Audio(service.video);
-  //     video.preload = "auto";
-  //   });
-  // }, []);
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const videoEl = entry.target as HTMLVideoElement;
+            if (!videoEl.src) {
+              videoEl.src = videoEl.dataset.src || "";
+              videoEl.load();
+            }
+            observer.unobserve(videoEl);
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    Object.values(videoRefs.current).forEach((videoEl) => {
+      if (videoEl) {
+        observer.observe(videoEl);
+      }
+    });
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
 
   const handleMouseEnter = useCallback((service: any, index: number) => {
     setActiveVideo(service.video);
@@ -123,11 +143,9 @@ const Page5: React.FC = () => {
     // Play the video immediately
     if (videoRefs.current[service.video]) {
       const video = videoRefs.current[service.video]!;
-      if(!video.src){
-        video.src = service.video;
-        video.load();
+      if(video.src) {
+        video.play();
       }
-      video.play();
     }
   }, []);
 
@@ -166,9 +184,8 @@ const Page5: React.FC = () => {
                   loop
                   muted
                   playsInline
-                  className={`w-[45vw] h-[30vw] object-cover rounded-lg absolute transition-opacity duration-300 ${
-                    activeVideo === service.video ? "opacity-100" : "opacity-0"
-                  }`}
+                  className={`w-[45vw] h-[30vw] object-cover rounded-lg absolute transition-opacity duration-300 ${activeVideo === service.video ? "opacity-100" : "opacity-0"
+                    }`}
                 />
               ))}
             </div>
