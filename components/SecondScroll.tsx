@@ -3,13 +3,7 @@
 import React, { useEffect, useCallback, useRef, useState } from "react";
 import Image from "next/image";
 import gsap from "gsap";
-
-type MediaItem = {
-  video: string;
-  img: string;
-  width: number;
-  height: number;
-};
+import { SecondImages, MediaItem } from "./utils/SecondImages";
 
 const Page6: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -17,6 +11,8 @@ const Page6: React.FC = () => {
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
   const [scrollLeft, setScrollLeft] = useState(0);
+
+  const mediaItems: MediaItem[] = SecondImages;
 
   // cursor animation and drag functionality
   const handleMouseMove = useCallback(
@@ -123,79 +119,6 @@ const Page6: React.FC = () => {
     handleMouseLeave,
   ]);
 
-  // all the media items
-  const mediaItems: MediaItem[] = [
-    {
-      video:
-        "https://studio-size.com/wp-content/uploads/2024/04/01-Clean-concept.mp4",
-      img: "",
-      width: 430,
-      height: 530,
-    },
-    {
-      video: "",
-      img: "https://studio-size.com/wp-content/uploads/2024/04/01-Meeting-room-683x1024.jpg",
-      width: 350,
-      height: 530,
-    },
-    {
-      video: "https://studio-size.com/wp-content/uploads/2024/04/02-Random.mp4",
-      img: "",
-      width: 580,
-      height: 530,
-    },
-    {
-      video:
-        "https://studio-size.com/wp-content/uploads/2024/04/10-Instagram-mix.mp4",
-      img: "",
-      width: 530,
-      height: 530,
-    },
-    {
-      video:
-        "https://studio-size.com/wp-content/uploads/2024/04/05-Web_WIP.mp4",
-      img: "",
-      width: 550,
-      height: 530,
-    },
-    {
-      video: "",
-      img: "https://studio-size.com/wp-content/uploads/2024/04/15-Bag-576x1024.jpg",
-      width: 250,
-      height: 530,
-    },
-    {
-      video:
-        "https://studio-size.com/wp-content/uploads/2024/04/09-Predavanje-4x3-High-Contrast.mp4",
-      img: "",
-      width: 640,
-      height: 530,
-    },
-    {
-      video: "",
-      img: "https://studio-size.com/wp-content/uploads/2024/04/04-Vignelli-768x929.jpg",
-      width: 350,
-      height: 530,
-    },
-    {
-      video: "https://studio-size.com/wp-content/uploads/2024/04/13-Vinyl.mp4",
-      img: "",
-      width: 370,
-      height: 530,
-    },
-    {
-      video: "",
-      img: "https://studio-size.com/wp-content/uploads/2024/04/14-Lego-873x873.jpg",
-      width: 450,
-      height: 530,
-    },
-    {
-      video: "",
-      img: "https://studio-size.com/wp-content/uploads/2024/04/16-Strap-873x944.jpg",
-      width: 380,
-      height: 530,
-    },
-  ];
 
   return (
     <div className="page-6 w-full lg:h-[68vw] h-fit p-4 lg:p-14 font-[Satoshi] bg-black">

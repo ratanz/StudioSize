@@ -2,13 +2,13 @@
 
 import React, { useState } from 'react';
 import Navbar from '@/components/Navbar';
-import Page1 from '@/components/Page1';
-import Part2 from '@/components/Part2';
-import Page3 from '@/components/Page3';
-import Page4 from '@/components/Page4';
-import Page5 from '@/components/Page5';
-import Page6 from '@/components/Page6';
-import Page7 from '@/components/Page7';
+import Page1 from '@/components/LandingText';
+import Part2 from '@/components/LandingVideo';
+import Page3 from '@/components/FeaturedWork';
+import Page4 from '@/components/Backto';
+import Page5 from '@/components/TextVidAnimation';
+import Page6 from '@/components/SecondScroll';
+import Page7 from '@/components/SizeLab';
 import Footer from '@/components/Footer';
 import Loader from '@/components/Loader';
 
