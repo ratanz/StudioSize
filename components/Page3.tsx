@@ -203,7 +203,7 @@ const Page3: React.FC = () => {
     img : "/assets/divote.jpg",
     video : "https://player.vimeo.com/progressive_redirect/playback/1004471199/rendition/720p/file.mp4?loc=external&log_user=0&signature=320fa11af9886195ea8511cb8eb8dd07cd139ee0b681e23d36d562f646069f31",
     title : "Divo",
-    subtitle : "The future of video editing.",
+    subtitle : "Clean korean cosmetics",
   },
     {
       img: "/assets/HotType.jpg",
