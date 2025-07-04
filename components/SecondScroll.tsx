@@ -149,13 +149,13 @@ const Page6: React.FC = () => {
                     width={item.width}
                     height={item.height}
                     alt="image"
-                    className="transition-opacity duration-300 object-cover w-full h-full ease-in-out "
+                    className="transition-opacity duration-300 object-cover w-full h-full ease-in-out"
                   />
                 )}
                 {item.video && (
                   <video
                     id={`video-${index}`}
-                    className="absolute top-0 left-0 w-full h-full z-0 object-cover transition-opacity duration-300 ease-in-out "
+                    className="absolute top-0 left-0 w-full h-full z-0 object-cover transition-opacity duration-300 ease-in-out"
                     muted
                     loop
                     autoPlay
@@ -196,12 +196,12 @@ const Page6: React.FC = () => {
           </div>
 
           <div className="main-text w-full lg:w-[64vw] h-fit lg:flex lg:gap-10 items-center mt-4 lg:mt-0">
-            <p className="text-white tracking-[0.1] leading-[1.1] lg:text-2xl text-sm font-bold">
+            <p className="text-white tracking-[0.1] leading-[1.1] lg:text-2xl text-sm font-semibold">
               Great design has no expiration date. It lasts for years and
               inspires instantly. Our creative freedom enables us to spend more
               time on fewer projects and
             </p>
-            <p className="text-white tracking-[0.1] leading-[1.1] lg:text-2xl text-sm lg:mt-0  mt-5 font-bold">
+            <p className="text-white tracking-[0.1] leading-[1.1] lg:text-2xl text-sm lg:mt-0  mt-5 font-semibold">
               focus on the intellectual, functional, and artistic aspects of
               business. Looking to create profound ideas, timeless design, and
               beauty in everyday life.
